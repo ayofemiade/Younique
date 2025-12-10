@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - Uranus Properties & C0</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Uranus Properties</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="booking-container">
+                <div class="booking-header">
+                    <h1>Book a Consultation</h1>
+                    <p>Schedule a personalized session with our real estate experts</p>
+                </div>
+
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label>Select Service Type</label>
+                        <div class="service-options">
+                            <div class="service-option" onclick="selectService(this, 'buying')">
+                                <i class="fas fa-home"></i>
+                                <h4>Buying</h4>
+                                <p>Find your dream home</p>
+                            </div>
+                            <div class="service-option" onclick="selectService(this, 'selling')">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h4>Selling</h4>
+                                <p>Valuation & Listing</p>
+                            </div>
+                            <div class="service-option" onclick="selectService(this, 'viewing')">
+                                <i class="fas fa-eye"></i>
+                                <h4>Viewing</h4>
+                                <p>Schedule a visit</p>
+                            </div>
+                            <div class="service-option" onclick="selectService(this, 'consultation')">
+                                <i class="fas fa-comments"></i>
+                                <h4>Consultation</h4>
+                                <p>General advice</p>
+                            </div>
+                        </div>
+                        <input type="hidden" id="service-type" name="service-type" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" rows="4"></textarea>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>Summary</h3>
+                        <div class="summary-item">
+                            <span class="summary-label">Service:</span>
+                            <span class="summary-value" id="summary-service">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Date:</span>
+                            <span class="summary-value" id="summary-date">-</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fas fa-check-circle"></i> Confirm Booking
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Uranus Properties & C0</h3>
+                    <p>Your trusted partner in real estate.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>123 Real Estate Street</p>
+                    <p>City, State 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@uranusproperties.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Uranus Properties & C0. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectService(element, service) {
+            document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('service-type').value = service;
+            document.getElementById('summary-service').textContent = service.charAt(0).toUpperCase() + service.slice(1);
+        }
+
+        document.getElementById('date').addEventListener('change', function (e) {
+            document.getElementById('summary-date').textContent = e.target.value;
+        });
+
+        document.getElementById('booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // In a real app, you would send data to server here
+            alert('Booking request received! We will contact you shortly.');
+        });
+    </script>
+</body>
+
+</html>
