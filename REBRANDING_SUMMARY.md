@@ -1,9 +1,9 @@
-# Uranus Properties & C0 - Website Rebranding Complete! 🏡
+# Younique & C0 - Website Rebranding Complete! 🏡
 
 ## What We've Accomplished
 
 ### ✅ Complete Rebranding
-- **Changed from**: Sholem Homes (formerly DETOFUN) → **Uranus Properties & C0**
+- **Changed from**: Sholem Homes (formerly DETOFUN) → **Younique & C0**
 - **New Color Scheme**: Black & White
   - Primary: #000000 (Black)
   - Secondary/Dark: #000000 (Black)
@@ -38,4 +38,4 @@ All pages have been updated with the new branding:
 - **booking.html**: Restored/Created based on the design system to ensure the "Book a Session" flow works.
 
 ### 🚀 Ready for Demo
-The website is fully rebranded to **Uranus Properties & C0**. Open `index.html` to explore the new look!
+The website is fully rebranded to **Younique & C0**. Open `index.html` to explore the new look!
